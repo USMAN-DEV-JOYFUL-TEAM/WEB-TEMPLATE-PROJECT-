@@ -115,14 +115,13 @@ span {
 .indicators {
   position: absolute;
   bottom: 20%;
-  right: 55px;
+  left: 10%;
 }
 
 .dot {
   display: inline-block;
   height: 10px;
   width: 10px;
-  left: 30%;
   border-radius: 50%;
   background-color: white;
   margin: 5px;
