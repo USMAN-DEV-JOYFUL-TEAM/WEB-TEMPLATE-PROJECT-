@@ -34,6 +34,45 @@ body {
   color: black;
 }
 
+.menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+
+  transition: right 0.3s ease;
+}
+
+sidebar a {
+  text-decoration: none;
+  color: black;
+  padding: 15px 0;
+}
+
+.close-btn {
+  align-self: flex-end;
+  border: none;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
 .hero-section {
   width: 100%;
   position: relative;
