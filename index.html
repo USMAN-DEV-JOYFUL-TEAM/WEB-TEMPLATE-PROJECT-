@@ -10,7 +10,7 @@
   <body>
     <section>
       <div class="navbar">
-        <div id="villa">VILLA</div>
+        <div id="villa">PrimeNest</div>
         <div class="navbar-link">
           <a href="home.html">Home</a>
         </div>
@@ -30,6 +30,19 @@
         <div id="nav-schedule">
           <a href="contact-us.html">Schedule a visit</a>
         </div>
+
+        <button class="menu-btn" id="menu-btn">☰</button>
+      </div>
+
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-btn">×</button>
+
+        <a href="#">Home</a>
+        <a href="#">Properties</a>
+        <a href="#">Property details</a>
+        <a href="#">Contact us</a>
+
+        <a href="#" class="mobile-schedule"> Schedule a visit </a>
       </div>
 
       <div class="hero-section">
@@ -52,9 +65,6 @@
               LEVEL PENTHOUSE
             </h1>
           </div>
-
-          <button class="prev" id="prev">&lt;</button>
-          <button class="next" id="next">&gt;</button>
         </div>
 
         <div class="slide">
@@ -76,13 +86,10 @@
               TOWN
             </h1>
           </div>
-
-          <button class="prev">&lt;</button>
-          <button class="next">&gt;</button>
         </div>
 
         <div class="slide">
-          <img src="Abuja.jpg" alt="kg villa img" />
+          <img src="Kogi.jpg" alt="kg villa img" />
 
           <div class="schedule">
             <div class="calender">🗓️</div>
@@ -100,11 +107,13 @@
               LEVEL PENTHOUSE <br />
             </h1>
           </div>
-
-          <button class="prev">&lt;</button>
-          <button class="next">&gt;</button>
         </div>
 
+        <!-- Arrow for the images -->
+        <button class="prev" id="prev">&lt;</button>
+        <button class="next" id="next">&gt;</button>
+
+        <!-- Dots for the images -->
         <div class="indicators">
           <div class="dot active" data-slide="0"></div>
           <div class="dot" data-slide="1"></div>
@@ -112,5 +121,6 @@
         </div>
       </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>

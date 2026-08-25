@@ -46,6 +46,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  display: none;
+}
+
+.slide.active {
+  display: block;
 }
 
 .slide img {
@@ -133,4 +138,9 @@ span {
   border-radius: 50%;
   background-color: white;
   margin: 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: darkorange;
 }
