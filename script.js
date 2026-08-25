@@ -1,6 +1,10 @@
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
 
+const menuBtn = document.querySelector("#menuBtn");
+const closeBtn = document.querySelector("#closeBtn");
+const sidebar = document.querySelector("#sidebar");
+
 const nextButton = document.querySelector("#next");
 const prevButton = document.querySelector("#prev");
 let currentSlide = 0;
@@ -51,4 +55,13 @@ dots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     showSlide(index);
   });
+});
+
+// menu buton funtionality
+menuBtn.addEventListener("click", () => {
+  sidebar.style.right = "0";
+});
+
+closeBtn.addEventListener("click", () => {
+  sidebar.style.right = "-300px";
 });
