@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="View complete property details, photos, features and location on PrimeNest.">
+
+    <title>
+        Property Details | PrimeNest
+    </title>
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+
+    <!-- Property Details CSS -->
+
+    <link
+        rel="stylesheet"
+        href="property-details.css">
+
+
+    <!-- Leaflet -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="container navbar">
+
+            <a
+                href="index.html"
+                class="logo">
+
+                Prime<span>Nest</span>
+
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                aria-label="Open navigation">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a
+                    href="properties.html"
+                    class="active">
+
+                    Properties
+
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#services">
+                    Services
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a
+                    href="contact.html?subject=List%20Your%20Property"
+                    class="btn btn-primary">
+
+                    List Your Property
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE ================= -->
+
+    <main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="details-hero">
+
+            <div class="container">
+
+                <span class="eyebrow">
+                    PrimeNest Property
+                </span>
+
+                <h1>
+                    Property Details
+                </h1>
+
+                <p>
+                    Explore photos, features, pricing and location.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROPERTY DETAILS ================= -->
+
+        <section class="details-section">
+
+            <div class="container">
+
+
+                <!-- Breadcrumb -->
+
+                <div class="breadcrumb">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <a href="properties.html">
+                        Properties
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span id="breadcrumbTitle">
+                        Property
+                    </span>
+
+                </div>
+
+
+                <div class="property-details-layout">
+
+
+                    <!-- ================= GALLERY ================= -->
+
+                    <div class="property-gallery">
+
+                        <div
+                            class="main-gallery-image"
+                            id="openLightbox">
+
+                            <img
+                                id="mainImage"
+                                src=""
+                                alt="Property image">
+
+                            <div class="gallery-zoom">
+
+                                <i class="fa-solid fa-expand"></i>
+
+                                View Gallery
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="gallery-thumbnails"
+                            id="thumbs">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= INFO ================= -->
+
+                    <div class="property-details-info">
+
+
+                        <div class="details-status-row">
+
+                            <span
+                                id="propertyType"
+                                class="details-type">
+
+                            </span>
+
+                            <span
+                                id="status"
+                                class="details-status">
+
+                            </span>
+
+                        </div>
+
+
+                        <h1 id="title">
+                            Loading property...
+                        </h1>
+
+
+                        <div
+                            id="location"
+                            class="details-location">
+
+                        </div>
+
+
+                        <div
+                            id="price"
+                            class="details-price">
+
+                        </div>
+
+
+                        <!-- Quick Features -->
+
+                        <div class="quick-features">
+
+
+                            <div class="quick-feature">
+
+                                <i class="fa-solid fa-bed"></i>
+
+                                <div>
+
+                                    <strong id="beds">
+                                        —
+                                    </strong>
+
+                                    <span>
+                                        Bedrooms
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="quick-feature">
+
+                                <i class="fa-solid fa-bath"></i>
+
+                                <div>
+
+                                    <strong id="baths">
+                                        —
+                                    </strong>
+
+                                    <span>
+                                        Bathrooms
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="quick-feature">
+
+                                <i class="fa-solid fa-car"></i>
+
+                                <div>
+
+                                    <strong id="parking">
+                                        —
+                                    </strong>
+
+                                    <span>
+                                        Parking
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="quick-feature">
+
+                                <i class="fa-solid fa-ruler-combined"></i>
+
+                                <div>
+
+                                    <strong id="size">
+                                        —
+                                    </strong>
+
+                                    <span>
+                                        Property Size
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Description -->
+
+                        <div class="details-block">
+
+                            <h2>
+                                Property Description
+                            </h2>
+
+                            <p id="description">
+                                Loading property description...
+                            </p>
+
+                        </div>
+
+
+                        <!-- Features -->
+
+                        <div class="details-block">
+
+                            <h2>
+                                Property Features
+                            </h2>
+
+                            <div
+                                id="features"
+                                class="feature-list">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Actions -->
+
+                        <div class="property-actions">
+
+                            <a
+                                href="contact.html"
+                                class="btn btn-primary">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                Contact Agent
+
+                            </a>
+
+
+                            <button
+                                type="button"
+                                id="shareProperty"
+                                class="btn btn-outline-dark">
+
+                                <i class="fa-solid fa-share-nodes"></i>
+
+                                Share
+
+                            </button>
+
+                        </div>
+
+                        <div
+                            id="shareMessage"
+                            class="share-message">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= MAP ================= -->
+
+                <section class="location-section">
+
+                    <div class="location-heading">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                Property Location
+                            </span>
+
+                            <h2>
+                                Where Is This Property?
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="propertyMap"
+                        class="property-map">
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= CTA ================= -->
+
+                <section class="details-cta">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            Interested in this property?
+                        </span>
+
+                        <h2>
+                            Let's help you make it yours.
+                        </h2>
+
+                        <p>
+                            Contact PrimeNest to arrange a viewing
+                            or get more information about this listing.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-primary">
+
+                        Contact PrimeNest
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= LIGHTBOX ================= -->
+
+    <div
+        id="lightbox"
+        class="lightbox"
+        aria-hidden="true">
+
+
+        <button
+            id="closeLightbox"
+            class="lightbox-close"
+            aria-label="Close gallery">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <button
+            id="prev"
+            class="lightbox-control lightbox-prev"
+            aria-label="Previous image">
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+        <div class="lightbox-content">
+
+            <img
+                id="lightboxImg"
+                src=""
+                alt="Expanded property image">
+
+            <div
+                id="lightboxCounter"
+                class="lightbox-counter">
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="next"
+            class="lightbox-control lightbox-next"
+            aria-label="Next image">
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    Prime<span>Nest</span>
+                </div>
+
+                <p>
+                    Find your place. Build your future.
+                    PrimeNest helps you discover properties
+                    across Nigeria.
+                </p>
+
+                <div class="socials">
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="properties.html">
+                            Properties
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Property Types
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="properties.html?type=Apartment">
+                            Apartments
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="properties.html?type=House">
+                            Houses
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="properties.html?type=Land">
+                            Land
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="properties.html?type=Hotel">
+                            Hotels
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Abuja, Nigeria
+                    </li>
+
+                    <li>
+                        +234 800 000 0000
+                    </li>
+
+                    <li>
+                        <a href="mailto:info@primenest.com">
+                            info@primenest.com
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="container copyright">
+
+            © 2026 PrimeNest. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- Leaflet JS -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+
+    <!-- Property Database -->
+
+    <script src="properties.js"></script>
+
+
+    <!-- Property Details -->
+
+    <script src="property-details.js"></script>
+
+</body>
+
+</html>

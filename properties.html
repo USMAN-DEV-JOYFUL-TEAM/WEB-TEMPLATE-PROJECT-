@@ -1,948 +1,643 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PrimeNest Estate</title>
+    <meta name="description"
+        content="Explore apartments, houses, land, hotels, commercial properties and estate developments across Nigeria with PrimeNest.">
 
-    <!-- Leaflet CSS -->
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="keywords"
+        content="Nigeria real estate, Abuja property, Lagos property, houses for sale, apartments for rent, land for sale">
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="author" content="PrimeNest">
+
+    <title>Properties | PrimeNest</title>
 
     <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
 
     <!-- Properties CSS -->
     <link rel="stylesheet" href="properties.css">
-
-
 </head>
 
 <body>
 
     <!-- ================= HEADER ================= -->
-    <header class="header">
-        <div class="container nav-container">
+
+    <header class="site-header">
+
+        <div class="container navbar">
 
             <a href="index.html" class="logo">
-                <span>Prime</span>Nest
+                Prime<span>Nest</span>
             </a>
 
-            <nav class="navbar" id="navbar">
-                <a href="index.html">Home</a>
-                <a href="properties.html" class="active">Properties</a>
-                <a href="property-details.html">Property Details</a>
-                <a href="contact.html">Contact Us</a>
-            </nav>
+            <button class="menu-toggle" aria-label="Open navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-            <div class="nav-right">
-                <a href="#" class="schedule-btn">
-                    <i class="fa-regular fa-calendar"></i>
-                    Schedule a Visit
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
                 </a>
 
-                <button class="menu-btn" id="menuBtn">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
+                <a href="properties.html" class="active">
+                    Properties
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#services">
+                    Services
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="contact.html?subject=List%20Your%20Property"
+                    class="btn btn-primary">
+                    List Your Property
+                </a>
+
+            </nav>
 
         </div>
+
     </header>
 
 
     <!-- ================= PAGE HERO ================= -->
-    <section class="page-hero">
 
-        <div class="container">
+    <main>
 
-            <div class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <span>Properties</span>
-            </div>
-
-            <h1>Our Properties</h1>
-
-            <p>
-                Discover apartments, hotels, land and premium estates
-                available across Nigeria.
-            </p>
-
-        </div>
-
-    </section>
-
-    <section class="search-section">
-
-        <div class="container">
-
-            <div class="search-box">
-
-                <div class="search-input">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Search property, location..."
-                    >
-                </div>
-
-                <div class="filter-item">
-
-                    <select id="locationFilter">
-                        <option value="all">All Locations</option>
-                        <option value="abuja">Abuja</option>
-                        <option value="lagos">Lagos</option>
-                        <option value="kano">Kano</option>
-                        <option value="port-harcourt">Port Harcourt</option>
-                        <option value="ibadan">Ibadan</option>
-                        <option value="enugu">Enugu</option>
-                    </select>
-
-                </div>
-
-                <div class="filter-item">
-
-                    <select id="typeFilter">
-                        <option value="all">All Property Types</option>
-                        <option value="apartment">Apartment</option>
-                        <option value="hotel">Hotel</option>
-                        <option value="land">Land</option>
-                        <option value="estate">Estate</option>
-                    </select>
-
-                </div>
-
-                <div class="filter-item">
-
-                    <select id="statusFilter">
-                        <option value="all">All Status</option>
-                        <option value="available">Available</option>
-                        <option value="construction">Under Construction</option>
-                    </select>
-
-                </div>
-
-                <button class="search-btn" id="searchBtn">
-                    Search
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= PROPERTIES ================= -->
-    <section class="properties-section">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div>
-                    <span class="section-label">PROPERTIES</span>
-
-                    <h2>
-                        Find Your Perfect
-                        <span>Property</span>
-                    </h2>
-                </div>
-
-                <div class="property-count">
-                    <strong id="propertyCount">8</strong>
-                    Properties Found
-                </div>
-
-            </div>
-
-
-            <div class="properties-layout">
-
-                <!-- PROPERTY LIST -->
-                <div class="property-grid" id="propertyGrid">
-
-
-                    <!-- PROPERTY 1 -->
-                    <article
-                        class="property-card"
-                        data-type="apartment"
-                        data-location="abuja"
-                        data-status="available"
-                        data-name="Luxury Apartment Maitama Abuja"
-                    >
-
-                        <div class="property-image">
-
-                            <img
-                                src="Picture 11.jpeg"
-                                alt="Luxury apartment in Maitama Abuja"
-                            >
-
-                            <span class="property-status available">
-                                To Let
-                            </span>
-
-                            <button class="favorite-btn">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-
-                        </div>
-
-                        <div class="property-content">
-
-                            <span class="property-type">
-                                Apartment
-                            </span>
-
-                            <h3>Luxury Apartment in Maitama</h3>
-
-                            <p class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Maitama, Abuja
-                            </p>
-
-                            <div class="property-features">
-
-                                <span>
-                                    <i class="fa-solid fa-bed"></i>
-                                    3 Beds
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-bath"></i>
-                                    3 Baths
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-ruler-combined"></i>
-                                    240 m²
-                                </span>
-
-                            </div>
-
-                            <div class="property-bottom">
-
-                                <div class="price">
-                                    ₦185,000,000
-                                </div>
-
-                                <a href="property-details.html" class="details-btn">
-                                    View Details
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROPERTY 2 -->
-                    <article
-                        class="property-card"
-                        data-type="apartment"
-                        data-location="lagos"
-                        data-status="available"
-                        data-name="Modern Apartment Lekki Lagos"
-                    >
-
-                        <div class="property-image">
-
-                            <img
-                                src="Picture 9.jpeg"
-                                alt="Modern apartment in Lekki Lagos"
-                            >
-
-                            <span class="property-status available">
-                                To Let
-                            </span>
-
-                            <button class="favorite-btn">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-
-                        </div>
-
-                        <div class="property-content">
-
-                            <span class="property-type">
-                                Apartment
-                            </span>
-
-                            <h3>Modern Apartment in Lekki</h3>
-
-                            <p class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Lekki Phase 1, Lagos
-                            </p>
-
-                            <div class="property-features">
-
-                                <span>
-                                    <i class="fa-solid fa-bed"></i>
-                                    4 Beds
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-bath"></i>
-                                    4 Baths
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-ruler-combined"></i>
-                                    310 m²
-                                </span>
-
-                            </div>
-
-                            <div class="property-bottom">
-
-                                <div class="price">
-                                    ₦220,000,000
-                                </div>
-
-                                <a href="property-details.html" class="details-btn">
-                                    View Details
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROPERTY 3 -->
-                    <article
-                        class="property-card"
-                        data-type="hotel"
-                        data-location="abuja"
-                        data-status="available"
-                        data-name="Luxury Hotel Wuse Abuja"
-                    >
-
-                        <div class="property-image">
-
-                            <img
-                                src="Picture 2.jpeg"
-                                alt="Luxury hotel in Wuse Abuja"
-                            >
-
-                            <span class="property-status available">
-                                Available
-                            </span>
-
-                            <button class="favorite-btn">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-
-                        </div>
-
-                        <div class="property-content">
-
-                            <span class="property-type">
-                                Hotel
-                            </span>
-
-                            <h3>Luxury Hotel in Wuse</h3>
-
-                            <p class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Wuse 2, Abuja
-                            </p>
-
-                            <div class="property-features">
-
-                                <span>
-                                    <i class="fa-solid fa-bed"></i>
-                                    35 Rooms
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-car"></i>
-                                    Parking
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-ruler-combined"></i>
-                                    1,200 m²
-                                </span>
-
-                            </div>
-
-                            <div class="property-bottom">
-
-                                <div class="price">
-                                    ₦850,000,000
-                                </div>
-
-                                <a href="property-details.html" class="details-btn">
-                                    View Details
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROPERTY 4 -->
-                    <article
-                        class="property-card"
-                        data-type="land"
-                        data-location="abuja"
-                        data-status="available"
-                        data-name="Residential Land Lugbe Abuja"
-                    >
-
-                        <div class="property-image">
-
-                            <img
-                                src="Picture 7.jpeg"
-                                alt="Residential land in Lugbe Abuja"
-                            >
-
-                            <span class="property-status available">
-                                For Sale
-                            </span>
-
-                            <button class="favorite-btn">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-
-                        </div>
-
-                        <div class="property-content">
-
-                            <span class="property-type">
-                                Land
-                            </span>
-
-                            <h3>Residential Land in Lugbe</h3>
-
-                            <p class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Lugbe, Abuja
-                            </p>
-
-                            <div class="property-features">
-
-                                <span>
-                                    <i class="fa-solid fa-ruler-combined"></i>
-                                    600 m²
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-file-contract"></i>
-                                    C of O
-                                </span>
-
-                            </div>
-
-                            <div class="property-bottom">
-
-                                <div class="price">
-                                    ₦45,000,000
-                                </div>
-
-                                <a href="property-details.html" class="details-btn">
-                                    View Details
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROPERTY 5 -->
-                    <article
-                        class="property-card"
-                        data-type="estate"
-                        data-location="lagos"
-                        data-status="construction"
-                        data-name="Greenview Estate Lagos"
-                    >
-
-                        <div class="property-image">
-
-                            <img
-                                src="Picture 6.jpeg"
-                                alt="Greenview estate in Lagos"
-                            >
-
-                            <span class="property-status construction">
-                                Under Construction
-                            </span>
-
-                            <button class="favorite-btn">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-
-                        </div>
-
-                        <div class="property-content">
-
-                            <span class="property-type">
-                                Estate
-                            </span>
-
-                            <h3>Greenview Residential Estate</h3>
-
-                            <p class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Sangotedo, Lagos
-                            </p>
-
-                            <div class="property-features">
-
-                                <span>
-                                    <i class="fa-solid fa-house"></i>
-                                    4 Bedroom
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-car"></i>
-                                    2 Parking
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-ruler-combined"></i>
-                                    450 m²
-                                </span>
-
-                            </div>
-
-                            <div class="property-bottom">
-
-                                <div class="price">
-                                    ₦95,000,000
-                                </div>
-
-                                <a href="property-details.html" class="details-btn">
-                                    View Details
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROPERTY 6 -->
-                    <article
-                        class="property-card"
-                        data-type="apartment"
-                        data-location="port-harcourt"
-                        data-status="available"
-                        data-name="Premium Apartment Port Harcourt"
-                    >
-
-                        <div class="property-image">
-
-                            <img
-                                src="Picture 1.jpeg"
-                                alt="Premium apartment in Port Harcourt"
-                            >
-
-                            <span class="property-status available">
-                                For Rent
-                            </span>
-
-                            <button class="favorite-btn">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-
-                        </div>
-
-                        <div class="property-content">
-
-                            <span class="property-type">
-                                Apartment
-                            </span>
-
-                            <h3>Premium Apartment</h3>
-
-                            <p class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                GRA Phase 2, Port Harcourt
-                            </p>
-
-                            <div class="property-features">
-
-                                <span>
-                                    <i class="fa-solid fa-bed"></i>
-                                    3 Beds
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-bath"></i>
-                                    3 Baths
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-ruler-combined"></i>
-                                    280 m²
-                                </span>
-
-                            </div>
-
-                            <div class="property-bottom">
-
-                                <div class="price">
-                                    ₦7,500,000/year
-                                </div>
-
-                                <a href="property-details.html" class="details-btn">
-                                    View Details
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROPERTY 7 -->
-                    <article
-                        class="property-card"
-                        data-type="land"
-                        data-location="ibadan"
-                        data-status="available"
-                        data-name="Affordable Land Ibadan"
-                    >
-
-                        <div class="property-image">
-
-                            <img
-                                src="Picture 6.jpeg"
-                                alt="Land property in Ibadan"
-                            >
-
-                            <span class="property-status available">
-                                For Sale
-                            </span>
-
-                            <button class="favorite-btn">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-
-                        </div>
-
-                        <div class="property-content">
-
-                            <span class="property-type">
-                                Land
-                            </span>
-
-                            <h3>Residential Land</h3>
-
-                            <p class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Ibadan, Oyo State
-                            </p>
-
-                            <div class="property-features">
-
-                                <span>
-                                    <i class="fa-solid fa-ruler-combined"></i>
-                                    500 m²
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-file-contract"></i>
-                                    Registered
-                                </span>
-
-                            </div>
-
-                            <div class="property-bottom">
-
-                                <div class="price">
-                                    ₦18,000,000
-                                </div>
-
-                                <a href="property-details.html" class="details-btn">
-                                    View Details
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROPERTY 8 -->
-                    <article
-                        class="property-card"
-                        data-type="estate"
-                        data-location="enugu"
-                        data-status="construction"
-                        data-name="Royal Gardens Estate Enugu"
-                    >
-
-                        <div class="property-image">
-
-                            <img
-                                src="Picture 7.jpeg"
-                                alt="Royal Gardens Estate in Enugu"
-                            >
-
-                            <span class="property-status construction">
-                                Under Construction
-                            </span>
-
-                            <button class="favorite-btn">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-
-                        </div>
-
-                        <div class="property-content">
-
-                            <span class="property-type">
-                                Estate
-                            </span>
-
-                            <h3>Royal Gardens Estate</h3>
-
-                            <p class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Enugu, Enugu State
-                            </p>
-
-                            <div class="property-features">
-
-                                <span>
-                                    <i class="fa-solid fa-house"></i>
-                                    4 Beds
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-bath"></i>
-                                    4 Baths
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-ruler-combined"></i>
-                                    500 m²
-                                </span>
-
-                            </div>
-
-                            <div class="property-bottom">
-
-                                <div class="price">
-                                    ₦75,000,000
-                                </div>
-
-                                <a href="property-details.html" class="details-btn">
-                                    View Details
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-
-                <!-- MAP -->
-                <div class="map-container">
-
-                    <div class="map-header">
-
-                        <div>
-                            <span class="map-label">
-                                PROPERTY LOCATIONS
-                            </span>
-
-                            <h3>Explore on Map</h3>
-                        </div>
-
-                        <button id="locateBtn" class="locate-btn">
-                            <i class="fa-solid fa-location-crosshairs"></i>
-                        </button>
-
-                    </div>
-
-                    <div id="propertyMap"></div>
-
-                    <div class="map-info">
-                        <i class="fa-solid fa-circle-info"></i>
-                        Click a marker to view property information.
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CTA ================= -->
-    <section class="cta-section">
-
-        <div class="container">
-
-            <div class="cta-content">
-
-                <div>
-                    <span class="section-label">FIND YOUR HOME</span>
-
-                    <h2>
-                        Looking for a property
-                        that fits your lifestyle?
-                    </h2>
-
-                    <p>
-                        Let our property experts help you find
-                        the perfect property anywhere in Nigeria.
-                    </p>
-                </div>
-
-                <a href="contact.html" class="cta-btn">
-                    Contact Our Agents
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-
-        <div class="container footer-grid">
-
-            <div class="footer-about">
-
-                <a href="index.html" class="logo footer-logo">
-                    <span>PrimeNest</span>ESTATE
-                </a>
-
-                <p>
-                    Your trusted destination for premium properties,
-                    apartments, hotels, land and estates across Nigeria.
-                </p>
-
-                <div class="social-links">
-
-                    <a href="#">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-
-                    <a href="#">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-
-                    <a href="#">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-
-                    <a href="#">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>Company</h4>
-
-                <a href="index.html">Home</a>
-                <a href="properties.html">Properties</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>Property Types</h4>
-
-                <a href="#">Apartments</a>
-                <a href="#">Hotels</a>
-                <a href="#">Land</a>
-                <a href="#">Estates</a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>Contact</h4>
-
-                <p>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Abuja, Nigeria
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-phone"></i>
-                    +234 800 000 0000
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
-                    info@nestate.com
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
+        <section class="properties-hero">
 
             <div class="container">
 
+                <span class="eyebrow">
+                    PrimeNest Listings
+                </span>
+
+                <h1>
+                    Explore Properties
+                </h1>
+
                 <p>
-                    © 2026 PrimeNest Estate. All Rights Reserved.
+                    Discover quality apartments, houses, land, hotels and
+                    investment opportunities across Nigeria.
                 </p>
 
             </div>
+
+        </section>
+
+
+        <!-- ================= FILTER SECTION ================= -->
+
+        <section class="properties-section">
+
+            <div class="container">
+
+                <div class="filter-panel">
+
+                    <div class="filter-heading">
+
+                        <div>
+                            <span class="eyebrow">
+                                Find Your Property
+                            </span>
+
+                            <h2>
+                                Search & Filter
+                            </h2>
+                        </div>
+
+                        <div class="property-count">
+                            <strong id="propertyCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Properties
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <form id="filterForm">
+
+                        <div class="filters-grid">
+
+                            <!-- Location -->
+
+                            <div class="filter-field">
+
+                                <label for="filterLocation">
+                                    Location
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <i class="fa-solid fa-location-dot"></i>
+
+                                    <input
+                                        type="text"
+                                        id="filterLocation"
+                                        placeholder="e.g. Abuja, Lagos, Lokoja">
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Property Type -->
+
+                            <div class="filter-field">
+
+                                <label for="filterType">
+                                    Property Type
+                                </label>
+
+                                <select id="filterType">
+
+                                    <option value="">
+                                        All Property Types
+                                    </option>
+
+                                    <option value="Apartment">
+                                        Apartment
+                                    </option>
+
+                                    <option value="House">
+                                        House
+                                    </option>
+
+                                    <option value="Land">
+                                        Land
+                                    </option>
+
+                                    <option value="Hotel">
+                                        Hotel
+                                    </option>
+
+                                    <option value="Commercial">
+                                        Commercial
+                                    </option>
+
+                                    <option value="Estate">
+                                        Estate
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Status -->
+
+                            <div class="filter-field">
+
+                                <label for="filterStatus">
+                                    Listing Status
+                                </label>
+
+                                <select id="filterStatus">
+
+                                    <option value="">
+                                        All Statuses
+                                    </option>
+
+                                    <option value="For Sale">
+                                        For Sale
+                                    </option>
+
+                                    <option value="For Rent">
+                                        For Rent
+                                    </option>
+
+                                    <option value="Under Construction">
+                                        Under Construction
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Minimum Price -->
+
+                            <div class="filter-field">
+
+                                <label for="minPrice">
+                                    Minimum Price
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <span class="currency-symbol">
+                                        ₦
+                                    </span>
+
+                                    <input
+                                        type="number"
+                                        id="minPrice"
+                                        min="0"
+                                        placeholder="0">
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Maximum Price -->
+
+                            <div class="filter-field">
+
+                                <label for="maxPrice">
+                                    Maximum Price
+                                </label>
+
+                                <div class="input-wrapper">
+
+                                    <span class="currency-symbol">
+                                        ₦
+                                    </span>
+
+                                    <input
+                                        type="number"
+                                        id="maxPrice"
+                                        min="0"
+                                        placeholder="No limit">
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Bedrooms -->
+
+                            <div class="filter-field">
+
+                                <label for="filterBeds">
+                                    Minimum Bedrooms
+                                </label>
+
+                                <select id="filterBeds">
+
+                                    <option value="0">
+                                        Any Number
+                                    </option>
+
+                                    <option value="1">
+                                        1+ Bedroom
+                                    </option>
+
+                                    <option value="2">
+                                        2+ Bedrooms
+                                    </option>
+
+                                    <option value="3">
+                                        3+ Bedrooms
+                                    </option>
+
+                                    <option value="4">
+                                        4+ Bedrooms
+                                    </option>
+
+                                    <option value="5">
+                                        5+ Bedrooms
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="filter-actions">
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                Search Properties
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="resetFilters"
+                                class="btn btn-dark">
+
+                                <i class="fa-solid fa-rotate-left"></i>
+
+                                Reset Filters
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <!-- ================= RESULTS ================= -->
+
+                <div class="results-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PrimeNest Collection
+                        </span>
+
+                        <h2>
+                            Available Properties
+                        </h2>
+
+                    </div>
+
+                    <div class="sort-wrapper">
+
+                        <label for="sortProperties">
+                            Sort by
+                        </label>
+
+                        <select id="sortProperties">
+
+                            <option value="default">
+                                Recommended
+                            </option>
+
+                            <option value="price-low">
+                                Price: Low to High
+                            </option>
+
+                            <option value="price-high">
+                                Price: High to Low
+                            </option>
+
+                            <option value="newest">
+                                Newest
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Property Cards -->
+
+                <div
+                    id="propertyGrid"
+                    class="property-grid">
+
+                </div>
+
+
+                <!-- Empty State -->
+
+                <div
+                    id="emptyState"
+                    class="empty-state"
+                    hidden>
+
+                    <div class="empty-icon">
+
+                        <i class="fa-solid fa-house-circle-exclamation"></i>
+
+                    </div>
+
+                    <h3>
+                        No Properties Found
+                    </h3>
+
+                    <p>
+                        We couldn't find any property matching your
+                        current filters.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="emptyReset"
+                        class="btn btn-primary">
+
+                        Reset Filters
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    Prime<span>Nest</span>
+                </div>
+
+                <p>
+                    Find your place. Build your future.
+                    PrimeNest helps you discover properties
+                    across Nigeria.
+                </p>
+
+                <div class="socials">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="properties.html">
+                            Properties
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#services">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Property Types
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="properties.html?type=Apartment">
+                            Apartments
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="properties.html?type=House">
+                            Houses
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="properties.html?type=Land">
+                            Land
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="properties.html?type=Hotel">
+                            Hotels
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="properties.html?type=Commercial">
+                            Commercial
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="properties.html?type=Estate">
+                            Estates
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Abuja, Nigeria
+                    </li>
+
+                    <li>
+                        +234 800 000 0000
+                    </li>
+
+                    <li>
+                        <a href="mailto:info@primenest.com">
+                            info@primenest.com
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="container copyright">
+
+            © 2026 PrimeNest. All Rights Reserved.
 
         </div>
 
     </footer>
 
 
-    <!-- Leaflet JS -->
-    <script
-        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
-    </script>
+    <!-- Main JS -->
+    <script src="main.js"></script>
 
     <!-- Properties JS -->
     <script src="properties.js"></script>
 
 </body>
+
 </html>
