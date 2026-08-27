@@ -1,8 +1,8 @@
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
 
-const menuBtn = document.querySelector("#menuBtn");
-const closeBtn = document.querySelector("#closeBtn");
+const menuBtn = document.querySelector("#menu-btn");
+const closeBtn = document.querySelector("#close-btn");
 const sidebar = document.querySelector("#sidebar");
 
 const nextButton = document.querySelector("#next");
@@ -57,11 +57,21 @@ dots.forEach((dot, index) => {
   });
 });
 
-// menu buton funtionality
+// Open sidebar
 menuBtn.addEventListener("click", () => {
   sidebar.style.right = "0";
 });
 
+// close sidebar
 closeBtn.addEventListener("click", () => {
   sidebar.style.right = "-300px";
+});
+
+// Close sidebar when a link is clicked
+const sidebarlinks = document.querySelectorAll(".sidebar a");
+
+sidebarlinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    sidebar.style.right = "-300px";
+  });
 });

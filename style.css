@@ -11,7 +11,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 230px;
+  padding: 20px 50px;
 }
 
 .navbar-link a {
@@ -38,7 +38,7 @@ body {
   display: none;
   border: none;
   background: none;
-  font-size: 30px;
+  font-size: 28px;
   cursor: pointer;
 }
 
@@ -56,12 +56,27 @@ body {
   padding: 30px;
 
   transition: right 0.3s ease;
+
+  box-shadow: -5px 0 15px rgb(0, 0, 0, 0.2);
 }
 
-sidebar a {
+.sidebar a {
   text-decoration: none;
   color: black;
   padding: 15px 0;
+}
+
+.sidebar a:hover {
+  color: #f35525;
+}
+
+.mobile-schedule {
+  background-color: #f35525;
+  color: white !important;
+  padding: 12px 20px !important;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .close-btn {
@@ -135,8 +150,7 @@ sidebar a {
   border-radius: 20px;
 }
 
-.schedule,
-span {
+.schedule span {
   padding-left: 20px;
 }
 .calendar {
@@ -182,4 +196,68 @@ span {
 
 .dot.active {
   background-color: darkorange;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .navbar-link,
+  #nav-schedule {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 24px;
+  }
+
+  .hero-section {
+    height: 80vh;
+  }
+
+  .schedule {
+    display: none;
+  }
+
+  .slide-content {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+
+  .slide-content h1 {
+    font-size: 32px;
+  }
+
+  .slide-content p {
+    font-size: 16px;
+  }
+
+  .prev,
+  .next {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    padding: 0;
+  }
+
+  .prev {
+    left: 15px;
+  }
+
+  .next {
+    right: 15px;
+  }
+
+  .indicators {
+    bottom: 10%;
+    right: 20px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
 }
