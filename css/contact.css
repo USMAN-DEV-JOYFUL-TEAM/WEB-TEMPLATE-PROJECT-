@@ -38,6 +38,14 @@ body {
   display: none;
 }
 
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.show {
+  display: flex;
+}
+
 .contact-hero {
   height: 400px;
   background-color: #202a33;
@@ -193,7 +201,6 @@ body {
 
     background-color: white;
 
-    display: none;
     flex-direction: column;
 
     padding: 20px;
@@ -205,9 +212,19 @@ body {
     text-decoration: none;
     color: black;
     padding: 12px 5px;
+    border-bottom: 10x solid #eee;
   }
 
   .mobile-menu a:hover {
     color: darkorange;
+  }
+
+  .mobile-menu a:last-child {
+    background-color: darkorange;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 15px;
+    border: none;
   }
 }
