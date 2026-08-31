@@ -34,6 +34,10 @@ body {
   font-weight: bold;
 }
 
+.menu-btn {
+  display: none;
+}
+
 .contact-hero {
   height: 400px;
   background-color: #202a33;
@@ -150,4 +154,33 @@ body {
 
 .contact-form textarea {
   resize: vertical;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-hero {
+    height: 300px;
+    padding: 20px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .navbar-link,
+  #nav-schedule {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
 }
