@@ -6,3 +6,30 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+.navbar-link a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+.navbar-link a:hover {
+  color: darkorange;
+}
+
+#nav-schedule a {
+  text-decoration: none;
+  color: black;
+}
+
+#villa {
+  font-size: 25px;
+  font-weight: bold;
+}
