@@ -1,0 +1,1123 @@
+/* =========================================================
+PRIMENEST — PROPERTIES PAGE
+properties.css
+========================================================= */
+
+/* =========================================================
+GLOBAL PROPERTIES PAGE
+========================================================= */
+
+.property-section {
+padding: 80px 0;
+background: #f8f8f8;
+}
+
+.property-section .container {
+width: min(1200px, 92%);
+margin: 0 auto;
+}
+
+/* =========================================================
+PAGE HERO
+========================================================= */
+
+.page-hero {
+position: relative;
+padding: 120px 0 90px;
+background:
+linear-gradient(
+rgba(0, 0, 0, 0.58),
+rgba(0, 0, 0, 0.58)
+),
+url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85")
+center / cover no-repeat;
+
+
+color: #ffffff;
+text-align: center;
+
+}
+
+.page-hero .container {
+width: min(900px, 92%);
+margin: 0 auto;
+}
+
+.page-hero .eyebrow {
+display: inline-block;
+margin-bottom: 15px;
+
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 2px;
+text-transform: uppercase;
+
+color: #d4a017;
+}
+
+.page-hero h1 {
+margin: 0 0 18px;
+
+
+font-family: "Montserrat", sans-serif;
+font-size: clamp(38px, 6vw, 64px);
+font-weight: 800;
+line-height: 1.1;
+
+}
+
+.page-hero p {
+max-width: 700px;
+margin: 0 auto;
+font-family: "Inter", sans-serif;
+font-size: 17px;
+line-height: 1.8;
+
+color: rgba(255, 255, 255, 0.88);
+
+}
+
+/* =========================================================
+PROPERTY FILTERS
+========================================================= */
+
+.property-filters {
+display: grid;
+
+grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+gap: 20px;
+
+padding: 30px;
+
+margin-bottom: 55px;
+
+background: #ffffff;
+
+border: 1px solid #e8e8e8;
+
+border-radius: 14px;
+
+box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.filter-group {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.filter-group label,
+.sort-wrapper label {
+font-family: "Inter", sans-serif;
+font-size: 13px;
+font-weight: 700;
+
+color: #333333;
+
+}
+
+.filter-group input,
+.filter-group select,
+.sort-wrapper select {
+width: 100%;
+
+min-height: 48px;
+
+padding: 0 14px;
+
+font-family: "Inter", sans-serif;
+font-size: 14px;
+
+color: #222222;
+
+background: #ffffff;
+
+border: 1px solid #dddddd;
+
+border-radius: 7px;
+
+outline: none;
+
+transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+}
+
+.filter-group input:focus,
+.filter-group select:focus,
+.sort-wrapper select:focus {
+border-color: #111111;
+box-shadow:
+    0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+.filter-group input::placeholder {
+color: #999999;
+}
+
+/* =========================================================
+FILTER BUTTONS
+========================================================= */
+
+.property-filters > .btn {
+align-self: end;
+min-height: 48px;
+
+}
+
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+gap: 9px;
+
+min-height: 46px;
+
+padding: 0 20px;
+
+font-family: "Inter", sans-serif;
+
+font-size: 14px;
+font-weight: 700;
+
+text-decoration: none;
+
+border-radius: 7px;
+
+border: 1px solid transparent;
+
+cursor: pointer;
+
+transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn:hover {
+transform: translateY(-2px);
+}
+
+.btn-primary {
+background: #111111;
+color: #ffffff;
+}
+
+.btn-primary:hover {
+background: #2b2b2b;
+}
+
+.btn-outline-dark {
+background: #ffffff;
+color: #111111;
+border-color: #111111;
+
+}
+
+.btn-outline-dark:hover {
+background: #111111;
+color: #ffffff;
+}
+
+.btn-dark {
+width: 100%;
+background: #111111;
+color: #ffffff;
+
+}
+
+.btn-dark:hover {
+background: #333333;
+}
+
+/* =========================================================
+PROPERTIES TOOLBAR
+========================================================= */
+
+.properties-toolbar {
+display: flex;
+
+align-items: flex-end;
+justify-content: space-between;
+
+gap: 30px;
+
+margin-bottom: 30px;
+
+}
+
+.properties-toolbar .eyebrow {
+display: block;
+
+margin-bottom: 8px;
+
+font-size: 12px;
+font-weight: 700;
+
+letter-spacing: 1.7px;
+text-transform: uppercase;
+
+color: #b3860b;
+
+}
+
+.properties-toolbar h2 {
+margin: 0 0 6px;
+
+font-family: "Montserrat", sans-serif;
+
+font-size: clamp(28px, 4vw, 38px);
+font-weight: 800;
+
+color: #111111;
+}
+
+.properties-toolbar p {
+margin: 0;
+font-family: "Inter", sans-serif;
+
+font-size: 14px;
+color: #777777;
+
+}
+
+.properties-toolbar p strong {
+color: #111111;
+}
+
+/* =========================================================
+SORT
+========================================================= */
+
+.sort-wrapper {
+display: flex;
+align-items: center;
+
+gap: 10px;
+
+min-width: 220px;
+
+}
+
+.sort-wrapper label {
+white-space: nowrap;
+}
+
+.sort-wrapper select {
+min-width: 180px;
+}
+
+/* =========================================================
+PROPERTY GRID
+========================================================= */
+
+.property-grid {
+display: grid;
+grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+gap: 28px;
+
+}
+
+/* =========================================================
+PROPERTY CARD
+========================================================= */
+
+.property-card {
+display: flex;
+flex-direction: column;
+overflow: hidden;
+
+background: #ffffff;
+
+border: 1px solid #e8e8e8;
+
+border-radius: 12px;
+
+box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.05);
+
+transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+.property-card:hover {
+transform: translateY(-7px);
+box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.11);
+
+}
+
+/* =========================================================
+PROPERTY IMAGE
+========================================================= */
+
+.property-image {
+position: relative;
+width: 100%;
+
+height: 245px;
+
+overflow: hidden;
+
+background: #eeeeee;
+
+}
+
+.property-image img {
+display: block;
+width: 100%;
+height: 100%;
+
+object-fit: cover;
+
+transition:
+    transform 0.45s ease;
+
+}
+
+.property-card:hover .property-image img {
+transform: scale(1.05);
+}
+
+/* =========================================================
+PROPERTY BADGE
+========================================================= */
+
+.property-badge {
+position: absolute;
+
+top: 16px;
+left: 16px;
+
+display: inline-flex;
+
+align-items: center;
+
+min-height: 30px;
+
+padding: 0 11px;
+
+background: #ffffff;
+
+color: #111111;
+
+border-radius: 5px;
+
+font-family: "Inter", sans-serif;
+
+font-size: 11px;
+font-weight: 800;
+
+letter-spacing: 0.5px;
+
+text-transform: uppercase;
+
+box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.12);
+
+}
+
+/* =========================================================
+PROPERTY STATUS
+========================================================= */
+
+.property-status {
+position: absolute;
+top: 16px;
+right: 16px;
+
+display: inline-flex;
+
+align-items: center;
+justify-content: center;
+
+min-height: 30px;
+
+padding: 0 11px;
+
+background: #111111;
+
+color: #ffffff;
+
+border-radius: 5px;
+
+font-family: "Inter", sans-serif;
+
+font-size: 11px;
+font-weight: 800;
+
+text-transform: uppercase;
+
+letter-spacing: 0.4px;
+
+box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15);
+
+}
+
+.property-status.rent {
+background: #1f6f43;
+}
+
+.property-status.construction {
+background: #b7791f;
+}
+
+/* =========================================================
+PROPERTY CONTENT
+========================================================= */
+
+.property-content {
+display: flex;
+
+flex-direction: column;
+
+flex: 1;
+
+padding: 24px;
+}
+
+.property-type {
+margin-bottom: 8px;
+font-family: "Inter", sans-serif;
+
+font-size: 11px;
+font-weight: 800;
+
+letter-spacing: 1.3px;
+
+text-transform: uppercase;
+
+color: #b3860b;
+}
+
+.property-title {
+margin: 0 0 12px;
+font-family: "Montserrat", sans-serif;
+
+font-size: 20px;
+font-weight: 700;
+
+line-height: 1.35;
+
+color: #111111;
+
+}
+
+.property-location {
+display: flex;
+
+align-items: center;
+
+gap: 8px;
+
+margin-bottom: 18px;
+
+font-family: "Inter", sans-serif;
+
+font-size: 13px;
+
+color: #777777
+
+}
+
+.property-location i {
+font-size: 13px;
+
+color: #b3860b;
+}
+
+/* =========================================================
+PROPERTY PRICE
+========================================================= */
+
+.property-price {
+margin-bottom: 18px;
+
+font-family: "Montserrat", sans-serif;
+
+font-size: 20px;
+font-weight: 800;
+
+color: #111111;
+
+}
+
+/* =========================================================
+PROPERTY META
+========================================================= */
+
+.property-meta {
+display: flex;
+
+flex-wrap: wrap;
+
+gap: 10px 16px;
+
+padding: 15px 0;
+
+margin-bottom: 20px;
+
+border-top: 1px solid #eeeeee;
+border-bottom: 1px solid #eeeeee;
+
+}
+
+.property-meta span {
+display: inline-flex;
+align-items: center;
+
+gap: 6px;
+
+font-family: "Inter", sans-serif;
+
+font-size: 12px;
+font-weight: 500;
+
+color: #666666;
+
+}
+
+.property-meta i {
+font-size: 12px;
+color: #999999;
+
+
+}
+
+/* =========================================================
+CARD BUTTON
+========================================================= */
+
+.property-content .btn-dark {
+margin-top: auto;
+}
+
+/* =========================================================
+EMPTY STATE
+========================================================= */
+
+.empty-state {
+padding: 80px 30px;
+
+text-align: center;
+
+background: #ffffff;
+
+border: 1px solid #e8e8e8;
+
+border-radius: 12px;
+
+}
+
+.empty-icon {
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+width: 70px;
+height: 70px;
+
+margin: 0 auto 20px;
+
+border-radius: 50%;
+
+background: #f3f3f3;
+
+color: #888888;
+
+font-size: 25px;
+
+}
+
+.empty-state h3 {
+margin: 0 0 10px;
+
+font-family: "Montserrat", sans-serif;
+
+font-size: 24px;
+
+color: #111111;
+
+}
+
+.empty-state p {
+margin: 0 auto 25px;
+
+max-width: 500px;
+
+font-family: "Inter", sans-serif;
+
+font-size: 14px;
+
+line-height: 1.7;
+
+color: #777777;
+
+}
+
+/* =========================================================
+HEADER / NAVIGATION
+========================================================= */
+
+.site-header {
+position: relative;
+z-index: 1000;
+
+background: #ffffff;
+
+border-bottom: 1px solid #eeeeee;
+
+}
+
+.navbar {
+display: flex;
+
+align-items: center;
+justify-content: space-between;
+
+min-height: 78px;
+}
+
+.logo {
+font-family: "Montserrat", sans-serif;
+font-size: 25px;
+font-weight: 800;
+
+color: #111111;
+
+text-decoration: none;
+}
+
+.logo span {
+color: #b3860b;
+}
+
+.nav-links {
+display: flex;
+align-items: center;
+
+gap: 28px;
+}
+
+.nav-links a {
+font-family: "Inter", sans-serif;
+
+font-size: 14px;
+font-weight: 600;
+
+color: #333333;
+
+text-decoration: none;
+
+transition: color 0.2s ease;
+
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+color: #b3860b;
+}
+
+.nav-links .btn-primary {
+color: #ffffff;
+}
+
+.nav-links .btn-primary:hover {
+color: #ffffff;
+}
+
+/* =========================================================
+MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle {
+display: none;
+
+width: 44px;
+height: 44px;
+
+align-items: center;
+justify-content: center;
+
+background: transparent;
+
+border: 1px solid #dddddd;
+
+border-radius: 6px;
+
+color: #111111;
+
+cursor: pointer;
+
+font-size: 18px;
+
+}
+
+/* =========================================================
+FOOTER
+========================================================= */
+
+.site-footer {
+padding: 70px 0 0;
+
+background: #111111;
+
+color: #ffffff;
+
+}
+
+.site-footer .container {
+width: min(1200px, 92%);
+margin: 0 auto;
+}
+
+.footer-grid {
+display: grid;
+
+grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    1fr;
+
+gap: 45px;
+
+}
+
+.footer-brand .logo {
+margin-bottom: 18px;
+
+color: #ffffff;
+
+}
+
+.footer-brand p {
+max-width: 350px;
+
+
+margin: 0;
+
+font-family: "Inter", sans-serif;
+
+font-size: 14px;
+
+line-height: 1.8;
+
+color: #aaaaaa;
+}
+
+.site-footer h3 {
+margin: 0 0 18px;
+
+font-family: "Montserrat", sans-serif;
+
+font-size: 16px;
+
+color: #ffffff;
+
+}
+
+.site-footer ul {
+padding: 0;
+margin: 0;
+
+list-style: none;
+
+}
+
+.site-footer li {
+margin-bottom: 11px;
+
+
+font-family: "Inter", sans-serif;
+
+font-size: 13px;
+
+color: #aaaaaa;
+
+
+}
+
+.site-footer a {
+color: #aaaaaa;
+
+text-decoration: none;
+
+transition: color 0.2s ease;
+
+}
+
+.site-footer a:hover {
+color: #ffffff;
+}
+
+/* =========================================================
+SOCIAL LINKS
+========================================================= */
+
+.socials {
+display: flex;
+gap: 10px;
+
+margin-top: 22px;
+}
+
+.socials a {
+display: flex;
+align-items: center;
+justify-content: center;
+
+width: 38px;
+height: 38px;
+
+border: 1px solid #333333;
+
+border-radius: 50%;
+
+color: #ffffff;
+
+transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+
+}
+
+.socials a:hover {
+background: #b3860b;
+border-color: #b3860b;
+
+color: #ffffff;
+}
+
+/* =========================================================
+COPYRIGHT
+========================================================= */
+
+.copyright {
+margin-top: 55px;
+padding: 22px 0;
+
+border-top: 1px solid #292929;
+
+font-family: "Inter", sans-serif;
+
+font-size: 12px;
+
+color: #777777;
+
+text-align: center;
+
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+.property-grid {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+}
+
+.property-filters {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+}
+
+.footer-grid {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+}
+
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+.property-section {
+    padding: 60px 0;
+}
+
+
+/* HERO */
+
+.page-hero {
+    padding: 90px 0 70px;
+}
+
+.page-hero h1 {
+    font-size: 40px;
+}
+
+.page-hero p {
+    font-size: 15px;
+}
+
+
+/* NAVIGATION */
+
+.menu-toggle {
+    display: flex;
+}
+
+.nav-links {
+    position: absolute;
+
+    top: 78px;
+    left: 0;
+    right: 0;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 15px 5% 25px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.nav-links.open {
+    display: flex;
+}
+
+.nav-links a {
+    padding: 14px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.nav-links .btn {
+    margin-top: 12px;
+
+    text-align: center;
+
+    border-bottom: none;
+}
+
+
+/* FILTER */
+
+.property-filters {
+    grid-template-columns: 1fr;
+
+    padding: 22px;
+
+    gap: 16px;
+}
+
+
+/* TOOLBAR */
+
+.properties-toolbar {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+.sort-wrapper {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.sort-wrapper select {
+    width: 100%;
+}
+
+
+/* GRID */
+
+.property-grid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+}
+
+
+/* CARD */
+
+.property-image {
+    height: 240px;
+}
+
+
+/* FOOTER */
+
+.footer-grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+}
+
+}
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+.property-section .container,
+.site-footer .container {
+    width: 90%;
+}
+
+.page-hero h1 {
+    font-size: 32px;
+}
+
+.page-hero p {
+    font-size: 14px;
+}
+
+.property-content {
+    padding: 20px;
+}
+
+.property-title {
+    font-size: 18px;
+}
+
+.property-price {
+    font-size: 18px;
+}
+
+.property-meta {
+    gap: 9px 12px;
+}
+
+.property-meta span {
+    font-size: 11px;
+}
+
+.property-image {
+    height: 220px;
+}
+
+}
