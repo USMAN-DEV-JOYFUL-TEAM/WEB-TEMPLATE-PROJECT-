@@ -158,7 +158,10 @@ function createPropertyCard(property) {
    RENDER PROPERTIES
    ========================================================= */
 
-function renderProperties(list) {
+const PROPERTIES_PER_PAGE = 6;
+let currentPage = 1;
+
+function renderProperties(list, page = 1) {
 
     const grid =
         document.getElementById("propertyGrid");
@@ -188,6 +191,8 @@ function renderProperties(list) {
             emptyState.hidden = false;
         }
 
+        renderPagination(0, 1);
+
         return;
     }
 
@@ -197,8 +202,75 @@ function renderProperties(list) {
     }
 
 
+    const totalPages =
+        Math.max(1, Math.ceil(list.length / PROPERTIES_PER_PAGE));
+
+    currentPage =
+        Math.min(Math.max(1, page), totalPages);
+
+    const start =
+        (currentPage - 1) * PROPERTIES_PER_PAGE;
+
+    const pageItems =
+        list.slice(start, start + PROPERTIES_PER_PAGE);
+
+
     grid.innerHTML =
-        list.map(createPropertyCard).join("");
+        pageItems.map(createPropertyCard).join("");
+
+    renderPagination(totalPages, currentPage, list);
+}
+
+
+/* =========================================================
+   PAGINATION
+   (matches TemplateMo's ul.pagination — see style/main.css)
+   ========================================================= */
+
+function renderPagination(totalPages, activePage, list) {
+
+    const paginationEl =
+        document.getElementById("pagination");
+
+    if (!paginationEl) {
+        return;
+    }
+
+    if (!totalPages || totalPages <= 1) {
+        paginationEl.innerHTML = "";
+        return;
+    }
+
+    let html = "";
+
+    for (let page = 1; page <= totalPages; page++) {
+        html += `
+            <li>
+                <a href="#" data-page="${page}" class="${page === activePage ? "is_active" : ""}">
+                    ${page}
+                </a>
+            </li>
+        `;
+    }
+
+    paginationEl.innerHTML = html;
+
+    paginationEl.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const targetPage =
+                Number(link.dataset.page) || 1;
+
+            renderProperties(list || properties, targetPage);
+
+            const grid = document.getElementById("propertyGrid");
+
+            if (grid) {
+                grid.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+    });
 }
 
 
