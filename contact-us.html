@@ -1,163 +1,245 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
 
-    <title>Contact Us | PrimeNest</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get in touch with PrimeNest — questions about a property, listing your property, or scheduling a visit.">
 
-    <link rel="stylesheet" href="css/contact.css" />
-  </head>
+<title>Contact Us | PrimeNest</title>
 
-  <body>
-    <header class="navbar">
-      <div id="villa">PrimeNest</div>
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-      <div class="navbar-link">
-        <a href="index.html">Home</a>
-      </div>
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-      <div class="navbar-link">
-        <a href="properties.html">Properties</a>
-      </div>
+<!-- SHARED STYLESHEET (the only CSS file the whole site uses) -->
+<link rel="stylesheet" href="style/main.css">
 
-      <div class="navbar-link">
-        <a href="property-details.html">Property Details</a>
-      </div>
+</head>
 
-      <div class="navbar-link">
-        <a href="contact.html">Contact Us</a>
-      </div>
+<body>
 
-      <div id="nav-schedule">
-        <a href="#contact-form">Schedule a Visit</a>
-      </div>
+<!-- =====================================================
+     SUB-HEADER INFO BAR
+     ===================================================== -->
 
-      <button class="menu-btn" id="menu-btn">☰</button>
+<div class="sub-header">
+    <div class="container">
 
-      <div class="mobile-menu" id="mobile-menu">
-        <a href="index.html">Home</a>
-        <a href="properties.html">Properties</a>
-        <a href="property-details.html">Property Details</a>
-        <a href="contact-us.html">Contact Us</a>
-        <a href="#contact-form"> Schedule a Visit</a>
-      </div>
-    </header>
+        <ul class="info">
+            <li><i class="fa-solid fa-envelope"></i> info@primenest.com</li>
+            <li><i class="fa-solid fa-location-dot"></i> Kogi, Nigeria</li>
+        </ul>
 
-    <main>
-      <section class="contact-hero">
-        <div class="contact-hero-content">
-          <p>CONTACT US</p>
-
-          <h1>Get In Touch With Us</h1>
-
-          <span>
-            Have a question about a property? We are here to help you.
-          </span>
-        </div>
-      </section>
-
-      <section class="contact-section">
-        <div class="contact-info">
-          <h2>Let's Talk</h2>
-
-          <p>
-            Whether you want to buy, rent or sell a property, feel free to reach
-            out to us.
-          </p>
-
-          <div class="contact-item">
-            <strong>📍 Address</strong>
-            <p>Kogi, Nigeria</p>
-          </div>
-
-          <div class="contact-item">
-            <strong>📞 Phone</strong>
-            <p>+2349157968653</p>
-          </div>
-
-          <div class="contact-item">
-            <strong>✉️ Email</strong>
-            <p>info@primenest.com</p>
-          </div>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
 
-        <div class="contact-form" id="contact-form">
-          <h2>Send Us a Message</h2>
+    </div>
+</div>
 
-          <form>
-            <label for="name">Full Name</label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Your full name"
-              required
-            />
 
-            <label for="email">Email Address</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="you@example.com"
-              required
-            />
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
-            <label for="subject">Subject</label>
-            <input
-              type="text"
-              id="subject"
-              placeholder="What is your message about?"
-              required
-            />
+<header class="site-header">
 
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              rows="6"
-              placeholder="Write your message here..."
-              required
-            ></textarea>
+    <div class="container navbar">
 
-            <button type="submit">Send Message</button>
-          </form>
+        <a href="index.html" class="logo">Prime<span>Nest</span></a>
+
+        <button type="button" class="menu-toggle" aria-label="Open navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="properties.html">Properties</a>
+            <a href="property-details.html">Property Details</a>
+            <a href="contact-us.html" class="active">Contact Us</a>
+            <a href="contact-us.html#contact-form" class="btn btn-primary">
+                <i class="fa-solid fa-calendar"></i> Schedule a visit
+            </a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- =================================================
+         PAGE HERO
+         ================================================= -->
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow">Contact Us</span>
+            <h1>Get In Touch With Our Agents</h1>
+            <p>Have a question about a property? We're here to help you find the right place.</p>
         </div>
-      </section>
-    </main>
+    </section>
 
-    <!-- footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-about">
-          <h2>PrimeNest</h2>
 
-          <p>
-            Your trusted destination for finding the right property for you.
-          </p>
+    <!-- =================================================
+         CONTACT SECTION
+         ================================================= -->
+
+    <section class="section">
+        <div class="container">
+
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Contact Us</span>
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- CONTACT INFO -->
+
+                <div>
+
+                    <span class="eyebrow">| Let's Talk</span>
+                    <h2 style="margin-bottom:16px;">Whether you want to buy, rent or sell, we're here to help.</h2>
+
+                    <div class="contact-cards">
+
+                        <div class="contact-card">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h3>Address</h3>
+                                <p>Kogi, Nigeria</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+234 915 796 8653</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>info@primenest.com</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT FORM -->
+
+                <div class="form" id="contact-form-wrapper">
+
+                    <h2>Send Us a Message</h2>
+
+                    <form id="contact-form">
+
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Your full name" required>
+
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com" required>
+
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="What is your message about?" required>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="6" placeholder="Write your message here..." required></textarea>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+
+                        <div id="formMessage" class="form-message"></div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <div class="footer-brand">
+            <div class="logo">Prime<span>Nest</span></div>
+            <p>Find your place. Build your future. PrimeNest helps you discover properties across Nigeria.</p>
+
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
         </div>
 
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-
-          <a href="index.html">Home</a>
-          <a href="properties.html">Properties</a>
-          <a href="Property-details.html">Property Details</a>
-          <a href="contact-us.html">Contact Us</a>
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="property-details.html">Property Details</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
         </div>
 
-        <div class="footer-contact">
-          <h3>Contact</h3>
-
-          <p>Kogi, Nigeria</p>
-          <p>+234 9157968653</p>
-          <p>Info@primenest.com</p>
+        <div>
+            <h3>Property Types</h3>
+            <ul>
+                <li><a href="properties.html?type=House">Houses</a></li>
+                <li><a href="properties.html?type=Apartment">Apartments</a></li>
+                <li><a href="properties.html?type=Land">Land</a></li>
+                <li><a href="properties.html?type=Hotel">Hotels</a></li>
+                <li><a href="properties.html?type=Commercial">Commercial</a></li>
+            </ul>
         </div>
-      </div>
 
-      <div class="footer-bottom">
-        <p>@ 2026 PrimeNest. All rights reserved.</p>
-      </div>
-    </footer>
+        <div>
+            <h3>Contact</h3>
+            <ul>
+                <li>Kogi, Nigeria</li>
+                <li>+234 915 796 8653</li>
+                <li><a href="mailto:info@primenest.com">info@primenest.com</a></li>
+            </ul>
+        </div>
 
-    <script src="js/contact.js"></script>
-  </body>
+    </div>
+
+    <div class="container copyright">
+        &copy; 2026 PrimeNest. All rights reserved.
+    </div>
+
+</footer>
+
+
+<script src="js/contact.js"></script>
+<script src="js/nav.js"></script>
+
+</body>
 </html>

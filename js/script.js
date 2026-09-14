@@ -1,15 +1,17 @@
+/* =========================================================
+   PRIMENEST — HOME PAGE HERO SLIDER
+   (Mobile navigation now lives in js/nav.js, shared with
+   contact-us.html — see index.html script order.)
+   ========================================================= */
+
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
-
-const menuBtn = document.querySelector("#menu-btn");
-const closeBtn = document.querySelector("#close-btn");
-const sidebar = document.querySelector("#sidebar");
 
 const nextButton = document.querySelector("#next");
 const prevButton = document.querySelector("#prev");
 let currentSlide = 0;
 
-// Function for showing a slide
+// Show a given slide by index
 function showSlide(index) {
   if (index < 0 || index >= slides.length) {
     return;
@@ -39,7 +41,7 @@ nextButton.addEventListener("click", () => {
   showSlide(nextslide);
 });
 
-// Previous Button slide
+// Previous button listener
 prevButton.addEventListener("click", () => {
   let previousslide = currentSlide - 1;
 
@@ -50,28 +52,20 @@ prevButton.addEventListener("click", () => {
   showSlide(previousslide);
 });
 
-// To make the dot active
+// Dots clickable
 dots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     showSlide(index);
   });
 });
 
-// Open sidebar
-menuBtn.addEventListener("click", () => {
-  sidebar.style.right = "0";
-});
+// Auto-advance the slider, matching TemplateMo's auto-rotating banner
+setInterval(() => {
+  let nextslide = currentSlide + 1;
 
-// close sidebar
-closeBtn.addEventListener("click", () => {
-  sidebar.style.right = "-300px";
-});
+  if (nextslide >= slides.length) {
+    nextslide = 0;
+  }
 
-// Close sidebar when a link is clicked
-const sidebarlinks = document.querySelectorAll(".sidebar a");
-
-sidebarlinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    sidebar.style.right = "-300px";
-  });
-});
+  showSlide(nextslide);
+}, 6000);

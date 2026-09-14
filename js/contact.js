@@ -1,24 +1,13 @@
-const menuBtn = document.getElementById("menu-btn");
-const mobileMenu = document.getElementById("mobile-menu");
+/* =========================================================
+   PRIMENEST — CONTACT FORM (WHATSAPP HAND-OFF)
+   (Mobile navigation now lives in js/nav.js.)
+   ========================================================= */
 
-menuBtn.addEventListener("click", function () {
-  mobileMenu.classList.toggle("show");
-});
-
-const menuLinks = mobileMenu.querySelectorAll("a");
-menuLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.remove("show");
-  });
-});
-
-// Addded Whatsapp function
 const contactForm = document.getElementById("contact-form");
 
 contactForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  // Get the user informations from the field
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const subject = document.getElementById("subject").value;
@@ -44,4 +33,24 @@ contactForm.addEventListener("submit", function (event) {
     "https://wa.me/" + whatsappNumber + "?text=" + whatsappMessage;
 
   window.open(whatsappURL, "_blank");
+
+  const formMessage = document.getElementById("formMessage");
+
+  if (formMessage) {
+    formMessage.textContent =
+      "Thanks! We're opening WhatsApp so you can send your message.";
+    formMessage.classList.add("success");
+  }
+});
+
+// Pre-fill the subject field when arriving via a
+// "List Your Property" / "?subject=" link elsewhere on the site
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const subjectParam = params.get("subject");
+  const subjectField = document.getElementById("subject");
+
+  if (subjectParam && subjectField) {
+    subjectField.value = subjectParam;
+  }
 });
