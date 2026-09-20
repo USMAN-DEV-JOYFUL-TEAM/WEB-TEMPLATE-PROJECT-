@@ -1,64 +1,79 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>PrimeNest</title>
-    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Link to shared style for styling consistency -->
+    <link rel="stylesheet" href="style/main.css" />
+
+    <!-- Home page stylesheet -->
+    <link rel="stylesheet" href="style/index.css" />
   </head>
 
   <body>
-    <section>
-      <div class="navbar">
-        <div id="villa">PrimeNest</div>
-        <div class="navbar-link">
-          <a href="index.html">Home</a>
-        </div>
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+    <header class="site-header">
+      <div class="container navbar">
+        <a href="index.html" class="logo"> Prime<span>Nest</span> </a>
 
-        <div class="navbar-link">
-          <a href="properties.html">Properties</a>
-        </div>
+        <button type="button" class="menu-toggle" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
 
-        <div class="navbar-link">
-          <a href="property-details.html">Property details</a>
-        </div>
+        <nav class="nav-links">
+          <a href="index.html" class="active"> Home </a>
 
-        <div class="navbar-link">
-          <a href="contact-us.html">Contact us</a>
-        </div>
+          <a href="properties.html"> Properties </a>
 
-        <div id="nav-schedule">
-          <a href="contact-us.html">Schedule a visit</a>
-        </div>
+          <a href="property-details.html"> Property Details </a>
 
-        <button class="menu-btn" id="menu-btn">☰</button>
+          <a href="contact-us.html"> Contact Us </a>
+
+          <a
+            href="contact-us.html?subject=Schedule%20a%20Visit"
+            class="nav-schedule"
+          >
+            <i class="fa-regular fa-calendar"></i>
+            Schedule a Visit
+          </a>
+        </nav>
       </div>
+    </header>
 
-      <div class="sidebar" id="sidebar">
-        <button class="close-btn" id="close-btn">×</button>
-
-        <a href="index.html">Home</a>
-        <a href="properties.html">Properties</a>
-        <a href="property-details.html">Property details</a>
-        <a href="contact-us.html">Contact us</a>
-
-        <a href="contact-us.html" class="mobile-schedule"> Schedule a visit </a>
-      </div>
-
-      <div class="hero-section">
+    <main>
+      <!-- =====================================================
+           HERO SLIDER
+           ===================================================== -->
+      <section class="hero-section">
+        <!-- Slide 1 -->
         <div class="slide active">
-          <img src="assets/Abuja.jpg" alt="abj villa img" />
+          <img src="assets/Abuja.jpg" alt="Luxury property in Abuja" />
 
-          <div class="schedule">
-            <div class="calendar">🗓️</div>
+          <a
+            class="schedule"
+            href="contact-us.html?subject=Schedule%20a%20Visit"
+          >
+            <i class="fa-regular fa-calendar" aria-hidden="true"></i>
             <span>Schedule a visit</span>
-          </div>
+          </a>
 
           <div class="slide-content">
-            <div class="location">
+            <div class="hero-location">
               Abuja,
-              <p>Nigeria</p>
+              <span>Nigeria</span>
             </div>
+
             <h1>
               ACT NOW! <br />
               GET THE HIGHEST <br />
@@ -67,70 +82,407 @@
           </div>
         </div>
 
+        <!-- Slide 2 -->
         <div class="slide">
-          <img src="assets/Lagos.jpeg" alt="lg villa img" />
+          <img src="assets/Lagos.jpeg" alt="Luxury property in Lagos" />
 
-          <div class="schedule">
-            <div class="calendar">🗓️</div>
+          <a
+            class="schedule"
+            href="contact-us.html?subject=Schedule%20a%20Visit"
+          >
+            <i class="fa-regular fa-calendar" aria-hidden="true"></i>
             <span>Schedule a visit</span>
-          </div>
+          </a>
 
           <div class="slide-content">
-            <div class="location">
+            <div class="hero-location">
               Lagos,
-              <p>Nigeria</p>
+              <span>Nigeria</span>
             </div>
+
             <h1>
               BE QUICK! <br />
-              GET THE BEST VILLA IN<br />
+              GET THE BEST VILLA IN <br />
               TOWN
             </h1>
           </div>
         </div>
 
+        <!-- Slide 3 -->
         <div class="slide">
-          <img src="assets/Kogi.jpg" alt="kg villa img" />
+          <img src="assets/Kogi.jpg" alt="Property in Kogi" />
 
-          <div class="schedule">
-            <div class="calendar">🗓️</div>
+          <a
+            class="schedule"
+            href="contact-us.html?subject=Schedule%20a%20Visit"
+          >
+            <i class="fa-regular fa-calendar" aria-hidden="true"></i>
             <span>Schedule a visit</span>
-          </div>
+          </a>
 
           <div class="slide-content">
-            <div class="location">
+            <div class="hero-location">
               Kogi,
-              <p>Nigeria</p>
+              <span>Nigeria</span>
             </div>
+
             <h1>
               ACT NOW! <br />
-              GET THE HIGHEST <br />
-              LEVEL PENTHOUSE <br />
+              FIND YOUR <br />
+              PERFECT HOME
             </h1>
           </div>
         </div>
 
-        <!-- Arrow for the images -->
-        <button class="prev" id="prev">&lt;</button>
-        <button class="next" id="next">&gt;</button>
+        <!-- Slider controls -->
+        <button class="prev" id="prev" aria-label="Previous slide">&lt;</button>
 
-        <!-- Dots for the images -->
+        <button class="next" id="next" aria-label="Next slide">&gt;</button>
+
+        <!-- Slider indicators -->
         <div class="indicators">
-          <div class="dot active" data-slide="0"></div>
-          <div class="dot" data-slide="1"></div>
-          <div class="dot" data-slide="2"></div>
-        </div>
-      </div>
-    </section>
+          <button
+            class="dot active"
+            data-slide="0"
+            aria-label="Go to slide 1"
+          ></button>
 
-    <!-- footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-about">
-          <h2>PrimeNest</h2>
+          <button
+            class="dot"
+            data-slide="1"
+            aria-label="Go to slide 2"
+          ></button>
+
+          <button
+            class="dot"
+            data-slide="2"
+            aria-label="Go to slide 3"
+          ></button>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           FEATURED PROPERTIES
+           Properties come directly from property-data.js
+           ===================================================== -->
+      <section class="featured-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="section-label">Featured Properties</span>
+
+              <h2>
+                We Provide The Best <br />
+                Property You Can Trust
+              </h2>
+            </div>
+
+            <p>
+              Explore some of the properties available on PrimeNest. Find a
+              property that matches what you need.
+            </p>
+          </div>
+
+          <!--
+            JavaScript will automatically insert
+            six properties from window.properties here.
+          -->
+          <div class="featured-grid" id="featured-properties"></div>
+
+          <!-- View more -->
+          <div class="featured-view-more">
+            <a
+              href="properties.html"
+              class="view-more-link"
+              aria-label="View more properties"
+            >
+              <span>View More</span>
+
+              <!-- Your info-icon-03 -->
+              <img src="assets/info-icon-03.png" alt="" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           VIDEO SECTION
+           video-background = background
+           video-frame = visible frame
+           ===================================================== -->
+      <section class="video-section">
+        <!-- Background image -->
+        <div class="video-background">
+          <img src="assets/video-frame.jpg" alt="" />
+        </div>
+
+        <div class="container">
+          <div class="video-heading">
+            <span class="section-label">Video View</span>
+
+            <h2>
+              Take A Look Inside <br />
+              PrimeNest
+            </h2>
+          </div>
+
+          <!-- Actual property video -->
+          <div class="video-wrapper">
+            <video
+              id="property-video"
+              class="property-video"
+              poster="assets/video-frame.jpg"
+              preload="metadata"
+            >
+              <source src="assets/primenest-property.mp4" type="video/mp4" />
+
+              Your browser does not support the video tag.
+            </video>
+
+            <!-- Video frame image -->
+            <img class="video-frame" src="assets/video-frame.jpg" alt="" />
+
+            <!-- Play button -->
+            <button
+              type="button"
+              class="video-play"
+              id="video-play"
+              aria-label="Play PrimeNest property video"
+            >
+              <i class="fa-solid fa-play"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           PROPERTY DEALS
+           ===================================================== -->
+      <section class="deals-section">
+        <div class="container">
+          <div class="section-heading centered">
+            <div>
+              <span class="section-label">Property Deals</span>
+
+              <h2>
+                Find Your Next <br />
+                Perfect Property
+              </h2>
+            </div>
+          </div>
+
+          <div class="deals-grid">
+            <div class="deal-card">
+              <i class="fa-solid fa-house"></i>
+
+              <h3>Houses</h3>
+
+              <p>Find comfortable houses in locations that suit your needs.</p>
+
+              <a href="properties.html">Explore Houses</a>
+            </div>
+
+            <div class="deal-card">
+              <i class="fa-solid fa-building"></i>
+
+              <h3>Apartments</h3>
+
+              <p>Explore modern apartments for sale or rent.</p>
+
+              <a href="properties.html">Explore Apartments</a>
+            </div>
+
+            <div class="deal-card">
+              <i class="fa-solid fa-map"></i>
+
+              <h3>Land</h3>
+
+              <p>Discover land opportunities for your next development.</p>
+
+              <a href="properties.html">Explore Land</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           PROPERTY CATEGORIES
+           ===================================================== -->
+      <section class="categories-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="section-label">Property Categories</span>
+
+              <h2>
+                Choose A Property <br />
+                That Fits You
+              </h2>
+            </div>
+          </div>
+
+          <div class="category-grid">
+            <a href="properties.html" class="category-card">
+              <i class="fa-solid fa-house"></i>
+              <span>Houses</span>
+            </a>
+
+            <a href="properties.html" class="category-card">
+              <i class="fa-solid fa-building"></i>
+              <span>Apartments</span>
+            </a>
+
+            <a href="properties.html" class="category-card">
+              <i class="fa-solid fa-hotel"></i>
+              <span>Hotels</span>
+            </a>
+
+            <a href="properties.html" class="category-card">
+              <i class="fa-solid fa-tree-city"></i>
+              <span>Estates</span>
+            </a>
+
+            <a href="properties.html" class="category-card">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>Land</span>
+            </a>
+
+            <a href="properties.html" class="category-card">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Commercial</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           ABOUT / WHY PRIMENEST
+           ===================================================== -->
+      <section class="about-section">
+        <div class="container about-content">
+          <div class="about-image">
+            <img src="assets/Kogi.jpg" alt="PrimeNest property" />
+          </div>
+
+          <div class="about-text">
+            <span class="section-label">About PrimeNest</span>
+
+            <h2>
+              Your Property Search <br />
+              Starts Here
+            </h2>
+
+            <p>
+              PrimeNest helps you discover properties across different locations
+              in Nigeria from one place.
+            </p>
+
+            <p>
+              Whether you are looking for a home, apartment, land, hotel or
+              commercial property, you can explore available options and find
+              one that suits your needs.
+            </p>
+
+            <a href="properties.html" class="dark-button">
+              Explore Properties
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           SERVICES
+           ===================================================== -->
+      <section class="services-section">
+        <div class="container">
+          <div class="section-heading centered">
+            <span class="section-label">Our Services</span>
+
+            <h2>What PrimeNest Offers</h2>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <h3>Property Search</h3>
+
+              <p>
+                Browse available properties and find options that match your
+                needs.
+              </p>
+            </div>
+
+            <div class="service-card">
+              <i class="fa-solid fa-house-circle-check"></i>
+
+              <h3>Property Discovery</h3>
+
+              <p>
+                Discover houses, apartments, land and other property
+                opportunities.
+              </p>
+            </div>
+
+            <div class="service-card">
+              <i class="fa-solid fa-calendar-check"></i>
+
+              <h3>Schedule A Visit</h3>
+
+              <p>
+                Get in touch and arrange a visit to a property you are
+                interested in.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           CALL TO ACTION
+           ===================================================== -->
+      <section class="cta-section">
+        <div class="container cta-content">
+          <div>
+            <span class="section-label">Ready To Find A Property?</span>
+
+            <h2>Let's Help You Find Your Next Property</h2>
+          </div>
+
+          <a href="contact-us.html" class="cta-button"> Schedule A Visit </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"> Prime<span>Nest</span> </a>
 
           <p>
             Your trusted destination for finding the right property for you.
           </p>
+
+          <div class="socials">
+            <a href="#" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
         </div>
 
         <div class="footer-links">
@@ -138,7 +490,7 @@
 
           <a href="index.html">Home</a>
           <a href="properties.html">Properties</a>
-          <a href="Property-details.html">Property Details</a>
+          <a href="property-details.html">Property Details</a>
           <a href="contact-us.html">Contact Us</a>
         </div>
 
@@ -146,24 +498,40 @@
           <h3>Property Types</h3>
 
           <a href="properties.html">Apartments</a>
-          <a href="properties.html">Villas</a>
-          <a href="properties.html">Estates</a>
-          <a href="properties.html">Mansions</a>
+          <a href="properties.html">Houses</a>
+          <a href="properties.html">Land</a>
+          <a href="properties.html">Commercial</a>
         </div>
 
         <div class="footer-contact">
           <h3>Contact</h3>
 
           <p>Kogi, Nigeria</p>
-          <p>+234 9157968653</p>
-          <p>Info@primenest.com</p>
+          <p>+234 915 796 8653</p>
+          <p>info@primenest.com</p>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>@ 2026 PrimeNest. All rights reserved.</p>
+      <div class="copyright">
+        <p>© 2026 PrimeNest. All rights reserved.</p>
       </div>
     </footer>
+    <!-- =====================================================
+         SCRIPTS
+
+
+         property-data.js MUST come first because it creates
+         window.properties.
+
+
+         nav.js handles the shared mobile navigation.
+
+
+         script.js handles the Home page.
+         ===================================================== -->
+
+    <script src="js/property-data.js"></script>
+    <script src="js/nav.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
