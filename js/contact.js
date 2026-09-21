@@ -1,56 +1,90 @@
 /* =========================================================
-   PRIMENEST — CONTACT FORM (WHATSAPP HAND-OFF)
-   (Mobile navigation now lives in js/nav.js.)
+   CONTACT FORM AND MAP
    ========================================================= */
 
-const contactForm = document.getElementById("contact-form");
+const officeLat = 9.0579;
+const officeLng = 7.4951;
+const mapElement = document.getElementById("contactMap");
 
-contactForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+if (mapElement && window.L) {
+  const map = L.map("contactMap").setView([officeLat, officeLng], 14);
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const subject = document.getElementById("subject").value;
-  const message = document.getElementById("message").value;
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
 
-  const whatsappMessage =
-    "Hello PrimeNest, %0A%0A" +
-    "My name is " +
-    name +
-    ".%0A" +
-    "Email: " +
-    email +
-    "%0A" +
-    "Subject: " +
-    subject +
-    "%0A" +
-    "Message: " +
-    message;
+  const officeMarker = L.marker([officeLat, officeLng]).addTo(map);
 
-  const whatsappNumber = "2349157968653";
+  officeMarker
+    .bindPopup(
+      "<div><strong>PrimeNest</strong><br>Abuja, Nigeria<br><small>PrimeNest Office</small></div>",
+    )
+    .openPopup();
 
-  const whatsappURL =
-    "https://wa.me/" + whatsappNumber + "?text=" + whatsappMessage;
+  const locateBtn = document.getElementById("locateBtn");
 
-  window.open(whatsappURL, "_blank");
+  if (locateBtn) {
+    locateBtn.addEventListener("click", () => {
+      if (!navigator.geolocation) {
+        alert("Geolocation is not supported by your browser.");
+        return;
+      }
 
-  const formMessage = document.getElementById("formMessage");
+      locateBtn.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Finding location...';
 
-  if (formMessage) {
-    formMessage.textContent =
-      "Thanks! We're opening WhatsApp so you can send your message.";
-    formMessage.classList.add("success");
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const userLat = position.coords.latitude;
+          const userLng = position.coords.longitude;
+
+          map.setView([userLat, userLng], 13);
+
+          L.circleMarker([userLat, userLng], { radius: 8 })
+            .addTo(map)
+            .bindPopup("Your current location")
+            .openPopup();
+
+          locateBtn.innerHTML =
+            '<i class="fa-solid fa-location-crosshairs"></i> My Location';
+        },
+        () => {
+          alert(
+            "Unable to access your location. Please allow location access and try again.",
+          );
+          locateBtn.innerHTML =
+            '<i class="fa-solid fa-location-crosshairs"></i> Find My Location';
+        },
+      );
+    });
   }
-});
+}
 
-// Pre-fill the subject field when arriving via a
-// "List Your Property" / "?subject=" link elsewhere on the site
-document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const subjectParam = params.get("subject");
-  const subjectField = document.getElementById("subject");
+const contactForm = document.querySelector(".contact-form form");
 
-  if (subjectParam && subjectField) {
-    subjectField.value = subjectParam;
-  }
-});
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    const whatsappMessage = [
+      "Hello PrimeNest,",
+      "",
+      `My name is ${name}.`,
+      `Email: ${email}`,
+      `Subject: ${subject}`,
+      `Message: ${message}`,
+    ].join("\n");
+
+    const whatsappURL =
+      "https://wa.me/2349157968653?text=" + encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+  });
+}
