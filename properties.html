@@ -1,76 +1,50 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<meta
-    name="description"
-    content="Browse apartments, houses, land, hotels and commercial properties available across Nigeria with PrimeNest."
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Browse apartments, houses, land, hotels and commercial properties available across Nigeria with PrimeNest.">
 
 <title>Properties | PrimeNest</title>
 
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<!-- =====================================================
-     FONT AWESOME
-     ===================================================== -->
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
->
-
-
-<!-- =====================================================
-     GOOGLE FONTS
-     ===================================================== -->
-
-<link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
->
-
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
->
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap"
-    rel="stylesheet"
->
-
-
-<!-- =====================================================
-     MAIN CSS
-     ===================================================== -->
-
-<link
-    rel="stylesheet"
-    href="style/main.css"
->
-
-
-<!-- =====================================================
-     PROPERTIES CSS
-     ===================================================== -->
-
-<link
-    rel="stylesheet"
-    href="style/properties.css"
->
+<!-- SHARED STYLESHEET (the only CSS file the whole site uses) -->
+<link rel="stylesheet" href="style/main.css">
 
 </head>
 
 <body>
+
+<!-- =====================================================
+     SUB-HEADER INFO BAR
+     ===================================================== -->
+
+<div class="sub-header">
+    <div class="container">
+
+        <ul class="info">
+            <li><i class="fa-solid fa-envelope"></i> info@primenest.com</li>
+            <li><i class="fa-solid fa-location-dot"></i> Kogi, Nigeria</li>
+        </ul>
+
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+
+    </div>
+</div>
+
 
 <!-- =====================================================
      HEADER
@@ -80,64 +54,20 @@
 
     <div class="container navbar">
 
+        <a href="index.html" class="logo">Prime<span>Nest</span></a>
 
-        <!-- LOGO -->
-
-        <a
-            href="index.html"
-            class="logo"
-        >
-            Prime<span>Nest</span>
-        </a>
-
-
-        <!-- MOBILE MENU -->
-
-        <button
-            type="button"
-            class="menu-toggle"
-            aria-label="Open navigation"
-        >
-
+        <button type="button" class="menu-toggle" aria-label="Open navigation">
             <i class="fa-solid fa-bars"></i>
-
         </button>
 
-
-        <!-- NAVIGATION -->
-
         <nav class="nav-links">
-
-            <a href="index.html">
-                Home
+            <a href="index.html">Home</a>
+            <a href="properties.html" class="active">Properties</a>
+            <a href="property-details.html">Property Details</a>
+            <a href="contact-us.html">Contact Us</a>
+            <a href="contact-us.html#contact-form" class="btn btn-primary">
+                <i class="fa-solid fa-calendar"></i> Schedule a visit
             </a>
-
-            <a
-                href="properties.html"
-                class="active"
-            >
-                Properties
-            </a>
-
-            <a href="index.html#about">
-                About
-            </a>
-
-            <a href="index.html#services">
-                Services
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a
-                href="contact.html?subject=List%20Your%20Property"
-                class="btn btn-primary"
-            >
-                List Your Property
-            </a>
-
         </nav>
 
     </div>
@@ -145,32 +75,17 @@
 </header>
 
 
-
 <!-- =====================================================
      PAGE HERO
      ===================================================== -->
 
 <section class="page-hero">
-
     <div class="container">
-
-        <span class="eyebrow">
-            PrimeNest Properties
-        </span>
-
-        <h1>
-            Find Your Perfect Property
-        </h1>
-
-        <p>
-            Explore verified homes, apartments, land,
-            hotels and commercial properties across Nigeria.
-        </p>
-
+        <span class="eyebrow">PrimeNest Properties</span>
+        <h1>Find Your Perfect Property</h1>
+        <p>Explore verified homes, apartments, land, hotels and commercial properties across Nigeria.</p>
     </div>
-
 </section>
-
 
 
 <!-- =====================================================
@@ -178,337 +93,124 @@
      ===================================================== -->
 
 <section class="property-section">
-
     <div class="container">
+
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Properties</span>
+        </div>
 
 
         <!-- FILTER FORM -->
 
-        <form
-            id="filterForm"
-            class="property-filters"
-        >
-
-
-            <!-- LOCATION -->
+        <form id="filterForm" class="property-filters">
 
             <div class="filter-group">
-
-                <label for="filterLocation">
-                    Location
-                </label>
-
-                <input
-                    type="text"
-                    id="filterLocation"
-                    placeholder="e.g. Abuja, Lagos, Lokoja"
-                >
-
+                <label for="filterLocation">Location</label>
+                <input type="text" id="filterLocation" placeholder="e.g. Abuja, Lagos, Lokoja">
             </div>
 
-
-
-            <!-- TYPE -->
-
             <div class="filter-group">
-
-                <label for="filterType">
-                    Property Type
-                </label>
-
+                <label for="filterType">Property Type</label>
                 <select id="filterType">
-
-                    <option value="">
-                        All Types
-                    </option>
-
-                    <option value="House">
-                        House
-                    </option>
-
-                    <option value="Apartment">
-                        Apartment
-                    </option>
-
-                    <option value="Land">
-                        Land
-                    </option>
-
-                    <option value="Hotel">
-                        Hotel
-                    </option>
-
-                    <option value="Commercial">
-                        Commercial
-                    </option>
-
-                    <option value="Estate">
-                        Estate
-                    </option>
-
+                    <option value="">All Types</option>
+                    <option value="House">House</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Land">Land</option>
+                    <option value="Hotel">Hotel</option>
+                    <option value="Commercial">Commercial</option>
+                    <option value="Estate">Estate</option>
                 </select>
-
             </div>
 
-
-
-            <!-- STATUS -->
-
             <div class="filter-group">
-
-                <label for="filterStatus">
-                    Status
-                </label>
-
+                <label for="filterStatus">Status</label>
                 <select id="filterStatus">
-
-                    <option value="">
-                        All Status
-                    </option>
-
-                    <option value="For Sale">
-                        For Sale
-                    </option>
-
-                    <option value="For Rent">
-                        For Rent
-                    </option>
-
-                    <option value="Under Construction">
-                        Under Construction
-                    </option>
-
+                    <option value="">All Status</option>
+                    <option value="For Sale">For Sale</option>
+                    <option value="For Rent">For Rent</option>
+                    <option value="Under Construction">Under Construction</option>
                 </select>
-
             </div>
 
-
-
-            <!-- MINIMUM PRICE -->
-
             <div class="filter-group">
-
-                <label for="minPrice">
-                    Minimum Price
-                </label>
-
-                <input
-                    type="number"
-                    id="minPrice"
-                    min="0"
-                    placeholder="₦0"
-                >
-
+                <label for="minPrice">Minimum Price</label>
+                <input type="number" id="minPrice" min="0" placeholder="₦0">
             </div>
 
-
-
-            <!-- MAXIMUM PRICE -->
-
             <div class="filter-group">
-
-                <label for="maxPrice">
-                    Maximum Price
-                </label>
-
-                <input
-                    type="number"
-                    id="maxPrice"
-                    min="0"
-                    placeholder="No maximum"
-                >
-
+                <label for="maxPrice">Maximum Price</label>
+                <input type="number" id="maxPrice" min="0" placeholder="No maximum">
             </div>
 
-
-
-            <!-- BEDROOMS -->
-
             <div class="filter-group">
-
-                <label for="filterBeds">
-                    Minimum Bedrooms
-                </label>
-
+                <label for="filterBeds">Minimum Bedrooms</label>
                 <select id="filterBeds">
-
-                    <option value="0">
-                        Any
-                    </option>
-
-                    <option value="1">
-                        1+
-                    </option>
-
-                    <option value="2">
-                        2+
-                    </option>
-
-                    <option value="3">
-                        3+
-                    </option>
-
-                    <option value="4">
-                        4+
-                    </option>
-
-                    <option value="5">
-                        5+
-                    </option>
-
+                    <option value="0">Any</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                    <option value="4">4+</option>
+                    <option value="5">5+</option>
                 </select>
-
             </div>
 
-
-
-            <!-- FILTER BUTTON -->
-
-            <button
-                type="submit"
-                class="btn btn-primary"
-            >
-
-                <i class="fa-solid fa-filter"></i>
-
-                Apply Filters
-
+            <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-filter"></i> Apply Filters
             </button>
 
-
-
-            <!-- RESET -->
-
-            <button
-                type="button"
-                id="resetFilters"
-                class="btn btn-outline-dark"
-            >
-
-                <i class="fa-solid fa-rotate-left"></i>
-
-                Reset
-
+            <button type="button" id="resetFilters" class="btn btn-outline-dark">
+                <i class="fa-solid fa-rotate-left"></i> Reset
             </button>
 
         </form>
 
 
-
-        <!-- =================================================
-             RESULTS HEADER
-             ================================================= -->
+        <!-- RESULTS HEADER -->
 
         <div class="properties-toolbar">
 
             <div>
-
-                <span class="eyebrow">
-                    Available Properties
-                </span>
-
-                <h2>
-                    Browse Properties
-                </h2>
-
-                <p>
-                    <strong id="propertyCount">
-                        0
-                    </strong>
-                    properties found
-                </p>
-
+                <span class="eyebrow">Available Properties</span>
+                <h2>Browse Properties</h2>
+                <p><strong id="propertyCount">0</strong> properties found</p>
             </div>
-
-
-
-            <!-- SORT -->
 
             <div class="sort-wrapper">
-
-                <label for="sortProperties">
-                    Sort By
-                </label>
-
+                <label for="sortProperties">Sort By</label>
                 <select id="sortProperties">
-
-                    <option value="default">
-                        Default
-                    </option>
-
-                    <option value="price-low">
-                        Price: Low to High
-                    </option>
-
-                    <option value="price-high">
-                        Price: High to Low
-                    </option>
-
-                    <option value="newest">
-                        Newest
-                    </option>
-
+                    <option value="default">Default</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="newest">Newest</option>
                 </select>
-
             </div>
 
         </div>
 
 
+        <!-- PROPERTY GRID -->
 
-        <!-- =================================================
-             PROPERTY GRID
-             ================================================= -->
-
-        <div
-            id="propertyGrid"
-            class="property-grid"
-        >
-        </div>
+        <div id="propertyGrid" class="property-grid"></div>
 
 
+        <!-- PAGINATION -->
 
-        <!-- =================================================
-             EMPTY STATE
-             ================================================= -->
+        <ul id="pagination" class="pagination"></ul>
 
-        <div
-            id="emptyState"
-            class="empty-state"
-            hidden
-        >
 
-            <div class="empty-icon">
+        <!-- EMPTY STATE -->
 
-                <i class="fa-solid fa-house-circle-xmark"></i>
-
-            </div>
-
-            <h3>
-                No Properties Found
-            </h3>
-
-            <p>
-                Try changing your search filters
-                to find more properties.
-            </p>
-
-            <button
-                type="button"
-                id="emptyReset"
-                class="btn btn-primary"
-            >
-
-                Reset Filters
-
-            </button>
-
+        <div id="emptyState" class="empty-state" hidden>
+            <div class="empty-icon"><i class="fa-solid fa-house-circle-xmark"></i></div>
+            <h3>No Properties Found</h3>
+            <p>Try changing your search filters to find more properties.</p>
+            <button type="button" id="emptyReset" class="btn btn-primary">Reset Filters</button>
         </div>
 
     </div>
-
 </section>
-
 
 
 <!-- =====================================================
@@ -519,190 +221,62 @@
 
     <div class="container footer-grid">
 
-
-        <!-- BRAND -->
-
         <div class="footer-brand">
-
-            <div class="logo">
-                Prime<span>Nest</span>
-            </div>
-
-            <p>
-                Find your place. Build your future.
-                PrimeNest helps you discover properties
-                across Nigeria.
-            </p>
-
+            <div class="logo">Prime<span>Nest</span></div>
+            <p>Find your place. Build your future. PrimeNest helps you discover properties across Nigeria.</p>
 
             <div class="socials">
-
-                <a href="#">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-
-                <a href="#">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a href="#">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-
-                <a href="#">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
-
         </div>
 
-
-
-        <!-- QUICK LINKS -->
-
         <div>
-
-            <h3>
-                Quick Links
-            </h3>
-
+            <h3>Quick Links</h3>
             <ul>
-
-                <li>
-                    <a href="index.html">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="properties.html">
-                        Properties
-                    </a>
-                </li>
-
-                <li>
-                    <a href="index.html#about">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.html">
-                        Contact
-                    </a>
-                </li>
-
+                <li><a href="index.html">Home</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="property-details.html">Property Details</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
             </ul>
-
         </div>
 
-
-
-        <!-- PROPERTY TYPES -->
-
         <div>
-
-            <h3>
-                Property Types
-            </h3>
-
+            <h3>Property Types</h3>
             <ul>
-
-                <li>
-                    <a href="properties.html?type=Apartment">
-                        Apartments
-                    </a>
-                </li>
-
-                <li>
-                    <a href="properties.html?type=House">
-                        Houses
-                    </a>
-                </li>
-
-                <li>
-                    <a href="properties.html?type=Land">
-                        Land
-                    </a>
-                </li>
-
-                <li>
-                    <a href="properties.html?type=Hotel">
-                        Hotels
-                    </a>
-                </li>
-
-                <li>
-                    <a href="properties.html?type=Commercial">
-                        Commercial
-                    </a>
-                </li>
-
+                <li><a href="properties.html?type=House">Houses</a></li>
+                <li><a href="properties.html?type=Apartment">Apartments</a></li>
+                <li><a href="properties.html?type=Land">Land</a></li>
+                <li><a href="properties.html?type=Hotel">Hotels</a></li>
+                <li><a href="properties.html?type=Commercial">Commercial</a></li>
             </ul>
-
         </div>
 
-
-
-        <!-- CONTACT -->
-
         <div>
-
-            <h3>
-                Contact
-            </h3>
-
+            <h3>Contact</h3>
             <ul>
-
-                <li>
-                    Abuja, Nigeria
-                </li>
-
-                <li>
-                    +234 800 000 0000
-                </li>
-
-                <li>
-                    <a href="mailto:info@primenest.com">
-                        info@primenest.com
-                    </a>
-                </li>
-
+                <li>Kogi, Nigeria</li>
+                <li>+234 915 796 8653</li>
+                <li><a href="mailto:info@primenest.com">info@primenest.com</a></li>
             </ul>
-
         </div>
 
     </div>
 
-
-
-    <!-- COPYRIGHT -->
-
     <div class="container copyright">
-
-        © 2026 PrimeNest. All Rights Reserved.
-
+        &copy; 2026 PrimeNest. All rights reserved.
     </div>
 
 </footer>
 
 
-
-<!-- =====================================================
-     IMPORTANT SCRIPT ORDER
-     ===================================================== -->
-
 <!-- PROPERTY DATABASE FIRST -->
-
 <script src="js/property-data.js"></script>
 
-
 <!-- PROPERTY PAGE JAVASCRIPT SECOND -->
-
 <script src="js/properties.js"></script>
 
-
 </body>
-
 </html>
